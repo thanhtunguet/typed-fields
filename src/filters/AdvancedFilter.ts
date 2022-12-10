@@ -1,3 +1,12 @@
+export class AdvancedFilter {
+  /**
+   * Create an instance of this class with its prototype
+   */
+  public static create<T = AdvancedFilter>(): T {
+    return Object.create(this.prototype);
+  }
+}
+
 export namespace AdvancedFilter {
   export type Guid = string;
 
@@ -41,14 +50,5 @@ export namespace AdvancedFilter {
     endWith?: string;
 
     notEndWith?: string;
-  }
-}
-
-export class AdvancedFilter {
-  /**
-   * Create an instance of this class with its prototype
-   */
-  public static create<T = AdvancedFilter>(): T {
-    return Object.create(this.prototype);
   }
 }
