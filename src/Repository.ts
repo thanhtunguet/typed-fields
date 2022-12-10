@@ -52,8 +52,11 @@ export class Repository {
 
     Repository.addInstance(this);
 
-    const { requestInterceptor, responseInterceptor, errorInterceptor } =
-      Repository;
+    const {
+      requestInterceptor, //
+      responseInterceptor,
+      errorInterceptor,
+    } = Repository;
 
     if (typeof requestInterceptor === 'function') {
       this.http.interceptors.request.use(requestInterceptor);
