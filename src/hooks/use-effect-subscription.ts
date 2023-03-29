@@ -1,4 +1,4 @@
-import type { Subscription } from 'rxjs/src/internal/Subscription';
+import type { Subscription } from 'rxjs';
 import React from 'react';
 
 /**

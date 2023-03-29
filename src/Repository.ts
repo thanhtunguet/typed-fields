@@ -1,6 +1,6 @@
 import { Axios } from './axios-observable';
 import type { AxiosRequestConfig, AxiosResponse } from 'axios';
-import type { OperatorFunction } from 'rxjs/dist/types';
+import type { OperatorFunction } from 'rxjs';
 import type { Model } from './Model';
 import { map } from 'rxjs/operators';
 

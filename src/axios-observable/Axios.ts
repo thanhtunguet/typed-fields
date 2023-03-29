@@ -6,10 +6,10 @@ import type {
   AxiosResponse,
   CancelTokenSource,
 } from 'axios';
-import axios, { AxiosDefaults } from 'axios';
-import type { Subscriber } from 'rxjs/src/internal/Subscriber';
+import axios from 'axios';
+import type { Subscriber } from 'rxjs';
+import { Observable } from 'rxjs';
 import type { AxiosObservable } from './AxiosObservable';
-import { Observable } from 'rxjs/src/internal/Observable';
 
 type Any = any;
 
@@ -39,7 +39,7 @@ export class Axios implements Pick<AxiosInstance, 'defaults' | 'interceptors'> {
    *
    * @type {AxiosRequestConfig}
    */
-  public static defaults: AxiosDefaults = axios.defaults;
+  public static defaults: AxiosRequestConfig = axios.defaults;
 
   /**
    * Axios interceptor manager

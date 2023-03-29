@@ -30,18 +30,12 @@
     "suppressImplicitAnyIndexErrors": true,
     "target": "ES5",
     "typeRoots": [
-      "node_modules/@types/",
-      "node_modules/rxjs"
+      "node_modules/@types/"
     ],
     "isolatedModules": true,
     "noEmit": true
   },
   "include": [
     "src"
-  ],
-  "exclude": [
-    "dist",
-    "example",
-    "node_modules"
   ]
 }

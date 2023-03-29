@@ -1,4 +1,4 @@
-import { Subscription } from 'rxjs/src/internal/Subscription';
+import { Subscription } from 'rxjs';
 import React from 'react';
 
 export function useSubscription(): Subscription {
