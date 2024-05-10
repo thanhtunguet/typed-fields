@@ -15,7 +15,7 @@
       "ESNext"
     ],
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Classic",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -30,6 +30,9 @@
     "target": "ES5",
     "typeRoots": [
       "node_modules/@types/"
+    ],
+    "types": [
+      "rxjs"
     ],
     "isolatedModules": true,
     "noEmit": true
