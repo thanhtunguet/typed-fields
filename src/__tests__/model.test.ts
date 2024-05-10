@@ -1,27 +1,31 @@
 import { Model } from 'src/Model';
-import { Field, ObjectField } from 'src/decorators';
-import { ModelFilter } from 'src/ModelFilter';
-import { IdFilter, StringFilter } from 'src/filters';
+import { AutoModel, Field, ObjectField } from 'src/decorators';
+import { IdFilter, StringFilter } from '../filters';
+import { ModelFilter } from '../ModelFilter';
+
+@AutoModel()
+class TestUser extends Model {
+  @Field(Number)
+  public id?: number;
+
+  @Field(String)
+  public name?: string;
+}
+
+@AutoModel()
+class TestUserFilter extends ModelFilter {
+  @ObjectField(IdFilter)
+  public userId: IdFilter = new IdFilter();
+
+  @ObjectField(StringFilter)
+  public username: StringFilter = new StringFilter();
+}
 
 describe('model tests', () => {
-  class TestUser extends Model {
-    @Field(Number)
-    public id?: number;
-
-    @Field(String)
-    public name?: string;
-  }
-
-  class TestUserFilter extends ModelFilter {
-    @ObjectField(IdFilter)
-    public userId: IdFilter = new IdFilter();
-
-    @ObjectField(StringFilter)
-    public username: StringFilter = new StringFilter();
-  }
-
   it('should cast data properly', () => {
-    const testUser: TestUser = TestUser.create();
+    const testUser: TestUser = new TestUser();
+    // const testUser: TestUser = TestUser.create();
+
     Object.assign(testUser, {
       id: '123',
       name: 1,
@@ -32,7 +36,8 @@ describe('model tests', () => {
   });
 
   it('should cast filter properly', () => {
-    const testFilter: TestUserFilter = TestUserFilter.create();
+    const testFilter: TestUserFilter = new TestUserFilter();
+
     Object.assign(testFilter, {
       userId: {
         equal: '123',

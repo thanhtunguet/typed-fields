@@ -1,6 +1,7 @@
-import { Field, List } from '../decorators';
+import { AutoModel, Field, List } from '../decorators';
 import { AdvancedFilter } from './AdvancedFilter';
 
+@AutoModel()
 export class IdFilter
   extends AdvancedFilter
   implements AdvancedFilter.IdFilter<number>

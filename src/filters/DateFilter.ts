@@ -1,7 +1,8 @@
-import { Moment } from 'moment';
-import { MomentField } from '../decorators';
+import type { Moment } from 'moment';
+import { AutoModel, MomentField } from '../decorators';
 import { AdvancedFilter } from './AdvancedFilter';
 
+@AutoModel()
 export class DateFilter
   extends AdvancedFilter
   implements AdvancedFilter.NumberFilter<Moment>

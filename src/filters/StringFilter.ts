@@ -1,6 +1,7 @@
-import { Field } from '../decorators';
+import { AutoModel, Field } from '../decorators';
 import { AdvancedFilter } from './AdvancedFilter';
 
+@AutoModel()
 export class StringFilter
   extends AdvancedFilter
   implements AdvancedFilter.StringFilter

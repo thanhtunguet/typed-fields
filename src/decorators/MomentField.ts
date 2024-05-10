@@ -1,5 +1,6 @@
 import { DecoratorSymbol } from './DecoratorSymbol';
 import moment from 'moment';
+import { BasePrototype } from './BasePrototype';
 
 /**
  * Decorate a field with moment format
@@ -8,7 +9,9 @@ import moment from 'moment';
  */
 export const MomentField = (): PropertyDecorator => {
   return (Target: any, property: string | symbol): void => {
-    Object.defineProperty(Target, property, {
+    const basePrototype = BasePrototype.getOrCreate(Target.constructor);
+
+    const descriptor: PropertyDescriptor = {
       enumerable: true,
       configurable: true,
       get() {
@@ -43,8 +46,11 @@ export const MomentField = (): PropertyDecorator => {
             );
           },
         });
-        this[property] = value;
+        (this as any)[property] = value;
       },
-    });
+    };
+
+    Object.defineProperty(Target, property, descriptor);
+    basePrototype.setPropertyDescriptor(property, descriptor);
   };
 };
