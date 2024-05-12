@@ -3,6 +3,7 @@ import { BasePrototype } from './BasePrototype';
 
 export function AutoModel<T extends { new (...rest: any[]): {} }>() {
   return (constructor: T) => {
+    console.log(`Property set: ::${constructor.name.toString()}`);
     return class extends constructor {
       constructor(...rest: any[]) {
         super(...rest);

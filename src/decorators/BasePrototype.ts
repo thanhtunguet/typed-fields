@@ -3,6 +3,7 @@ import { DecoratorSymbol } from './DecoratorSymbol';
 
 export class BasePrototype {
   public readonly name: string;
+
   private readonly descriptors: Record<string, PropertyDescriptor> = {};
 
   constructor(name: string) {
@@ -23,14 +24,18 @@ export class BasePrototype {
     return Reflect.getMetadata(DecoratorSymbol.PROTOTYPE, Target)!;
   }
 
-  public setPropertyDescriptor(
+  public setPropertyDescriptor = (
     property: string | symbol,
     descriptor: PropertyDescriptor,
-  ) {
-    Object.defineProperty(this.descriptors, property, {
-      get: () => descriptor,
-      enumerable: true,
-      configurable: false,
-    });
-  }
+  ) => {
+    console.log(`Property set: ::${property.toString()}`);
+
+    if (!Object.prototype.hasOwnProperty.call(this.descriptors, property)) {
+      Object.defineProperty(this.descriptors, property, {
+        get: () => descriptor,
+        enumerable: true,
+        configurable: false,
+      });
+    }
+  };
 }

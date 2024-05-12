@@ -67,6 +67,4 @@ export class Model {
   public toString(): string {
     return JSON.stringify(this);
   }
-
-  [key: string]: any;
 }

@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import 'package.json';
 
 export { Axios } from './axios-observable';
 
