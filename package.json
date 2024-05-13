@@ -1,10 +1,15 @@
 {
   "name": "react3l",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "React3L libraries for React projects",
-  "author": "thanhtunguet",
+  "author": {
+    "name": "thanhtunguet",
+    "email": "ht@thanhtunguet.info",
+    "url": "https://thanhtunguet.info"
+  },
   "license": "MIT",
-  "repository": "thanhtunguet/react3l",
+  "repository": "react3l/react3l",
+  "homepage": "https://react3l.github.io",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.ts",
