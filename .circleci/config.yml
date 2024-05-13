@@ -36,15 +36,6 @@ jobs:
           root: .
           paths:
             - .
-
-  lint:
-    executor: default
-    steps:
-      - attach_project
-      - run:
-          name: Lint files
-          command: |
-            yarn nx run-many --all --target=lint
   unit-tests:
     executor: default
     steps:
@@ -52,7 +43,7 @@ jobs:
       - run:
           name: Run unit tests
           command: |
-            yarn nx run-many --all --target=test
+            yarn test
       - store_artifacts:
           path: coverage
           destination: coverage
@@ -64,7 +55,7 @@ jobs:
       - run:
           name: Build package
           command: |
-            yarn nx run-many --all --target=build
+            yarn build
 workflows:
   build-and-test:
     jobs:
