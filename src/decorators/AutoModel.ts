@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { BasePrototype } from './BasePrototype';
 
-export function AutoModel<T extends { new(...rest: any[]): {} }>() {
+export function AutoModel<T extends { new (...rest: any[]): {} }>() {
   return (constructor: T) => {
     return class extends constructor {
       constructor(...rest: any[]) {

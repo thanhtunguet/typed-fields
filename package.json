@@ -1,6 +1,6 @@
 {
   "name": "react3l",
-  "version": "7.0.3",
+  "version": "7.0.4",
   "description": "React3L libraries for React projects",
   "author": {
     "name": "thanhtunguet",
@@ -10,11 +10,11 @@
   "license": "MIT",
   "repository": "react3l/react3l",
   "homepage": "https://react3l.github.io",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
   "source": "src/index.ts",
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "microbundle-crl build --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:build",

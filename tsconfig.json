@@ -27,7 +27,7 @@
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "ES5",
+    "target": "ESNext",
     "typeRoots": [
       "node_modules/@types/"
     ],
