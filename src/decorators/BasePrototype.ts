@@ -28,8 +28,6 @@ export class BasePrototype {
     property: string | symbol,
     descriptor: PropertyDescriptor,
   ) => {
-    console.log(`Property set: ::${property.toString()}`);
-
     if (!Object.prototype.hasOwnProperty.call(this.descriptors, property)) {
       Object.defineProperty(this.descriptors, property, {
         get: () => descriptor,
