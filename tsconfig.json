@@ -9,7 +9,6 @@
     "target": "ES5",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "types": [],
     "noEmit": false,
     "outDir": "./dist",
     "sourceMap": true,
@@ -28,7 +27,14 @@
     "isolatedModules": true,
     "noUncheckedIndexedAccess": true,
     "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "types": [
+      "node",
+      "jest"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
   "include": [
     "src/**/*"
