@@ -41,9 +41,15 @@ export const Field = (
               );
               return;
             }
+            let castedValue;
+            if (prototype === Date) {
+              castedValue = new Date(value);
+            } else {
+              castedValue = prototype(value);
+            }
             Reflect.defineMetadata(
               DecoratorSymbol.RAW_VALUE,
-              prototype(value),
+              castedValue,
               this,
               property,
             );
