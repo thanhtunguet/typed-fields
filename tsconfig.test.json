@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "isolatedModules": true,
-    "module": "commonjs",
-    "noEmit": false
-  }
-}

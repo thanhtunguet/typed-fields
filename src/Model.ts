@@ -1,4 +1,6 @@
-import { ObjectField, ObjectList } from './decorators';
+import { ObjectField } from './ObjectField';
+import { ObjectList } from './ObjectList';
+
 
 /**
  * Model namespace

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import { DecoratorSymbol } from './DecoratorSymbol';
 import { BasePrototype } from './BasePrototype';
+import { DecoratorSymbol } from './DecoratorSymbol';
 
 /**
  * Decorate a field as a list of primitive values
