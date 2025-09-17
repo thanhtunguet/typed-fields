@@ -2,9 +2,14 @@
   "name": "typed-fields",
   "version": "1.0.0",
   "description": "Typed fields for TypeScript, force casting the data type to avoid runtime errors",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "src": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc -w"
   },
   "keywords": [],
   "author": "thanhtunguet <ht@thanhtunguet.info>",

@@ -6,15 +6,20 @@
         "./src/*"
       ]
     },
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "target": "ES5",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "types": [],
     "noEmit": false,
     "outDir": "./dist",
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "ESNext"
+    ],
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -24,5 +29,12 @@
     "noUncheckedIndexedAccess": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force"
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
