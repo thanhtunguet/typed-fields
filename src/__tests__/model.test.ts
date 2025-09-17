@@ -16,10 +16,15 @@ describe('Model', () => {
   });
 
   it('serializes to string', () => {
-    const user = new User();
+    const user = User.create<User>();
     user.name = 'Alice';
     expect(user.toString()).toBe(JSON.stringify({ name: 'Alice' }));
   });
+
+  it('force casting', () => {
+    const user = User.create<User>();
+    Object.assign(user, { name: 'Alice', id: '123' });
+    expect(user.name).toBe('Alice');
+    expect(user.id).toBe(123);
+  });
 });
-
-
