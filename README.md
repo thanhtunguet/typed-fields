@@ -57,13 +57,14 @@ module.exports = {
 ### Quick start
 
 ```ts
-import { Model, Field, List, Enum, ObjectField, ObjectList, MomentField } from 'typed-fields';
+import { Model, Field, List, Enum, ObjectField, ObjectList, MomentField, DayjsField } from 'typed-fields';
 
 enum Role { User = 'user', Admin = 'admin' }
 
 class Profile extends Model {
   @Field(String) bio?: string;
   @MomentField() birthday?: any; // moment object
+  @DayjsField() createdAt?: any; // dayjs object
 }
 
 class User extends Model {
@@ -78,7 +79,7 @@ const u = User.create<User>();
 u.id = '42' as any;            // -> 42
 u.role = 'admin' as any;       // ok, matches enum member
 u.tags = [1, '2', true] as any; // -> ['1','2','true']
-u.profile = { bio: 'Hello', birthday: '2024-01-01' }; // -> Profile instance with moment birthday
+u.profile = { bio: 'Hello', birthday: '2024-01-01', createdAt: '2024-01-01' }; // -> Profile instance with moment birthday and dayjs createdAt
 ```
 
 ### Decorators
@@ -103,6 +104,9 @@ u.profile = { bio: 'Hello', birthday: '2024-01-01' }; // -> Profile instance wit
 
 - **`@MomentField()`**
   - Converts assigned values to `moment(value)`; preserves `null`/`undefined`.
+
+- **`@DayjsField()`**
+  - Converts assigned values to `dayjs(value)`; preserves `null`/`undefined`.
 
 - **`@AutoModel()`** (class decorator)
   - Ensures property descriptors collected during decoration are defined on each instance at construction time. Useful in complex initialization flows.
@@ -146,6 +150,7 @@ Enum(enumObject: Record<string, string | number | boolean>): PropertyDecorator
 ObjectField(constructor?: new (...args: any[]) => any): PropertyDecorator
 ObjectList(constructor?: new (...args: any[]) => any): PropertyDecorator
 MomentField(): PropertyDecorator
+DayjsField(): PropertyDecorator
 AutoModel<T extends { new (...rest: any[]): {} }>(): ClassDecorator
 
 // Base class

@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 
+export { DayjsField } from './DayjsField';
 export { Enum } from './Enum';
 export { Field } from './Field';
 export { List } from './List';
