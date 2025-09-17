@@ -13,6 +13,10 @@
   },
   "keywords": [],
   "author": "thanhtunguet <ht@thanhtunguet.info>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thanhtunguet/typed-fields"
+  },
   "license": "MIT",
   "type": "module",
   "dependencies": {
